@@ -1,16 +1,27 @@
-name: Python package
-
-on: [push]
+name: Hello World Test 
+on: [push] #activates every time someone pushes
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.8"]
-
-    steps:
+        python-version: ["3.8"] # runs on python 3.8
+    
+    steps:     # each step is what the action does
+      - uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.x'
+          
+#       - name: Install dependencies
+#         run: |
+#           python -m pip install --upgrade pip
+#           pip install -r requirements.txt
+          
       - name: Test hello world
         run: |
           python hello_world.py
+    
