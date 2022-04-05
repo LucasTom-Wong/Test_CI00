@@ -1,0 +1,3 @@
+def asA(){
+    print("AAA")
+}
