@@ -1,3 +1,2 @@
-def asA(){
+def asA():
     print("AAA")
-}
