@@ -29,4 +29,4 @@ jobs:
 
         - name: Run app
           run: |
-            python3 app.py
+            python3 test_app.py
