@@ -9,10 +9,13 @@ class FlaskAppTests(unittest.TestCase):
         # tested_app.app.config['TESTING'] = True
         self.app = tested_app.app.test_client()
 
-    def test_get_hello_endpoint(self):
+    def test_get_hello(self):
         r = self.app.get('/')
         # self.assertEqual(r.data, b'Hello World!')
-        print(r)
+        # b means bytes not string/unicode
+        # character is not a byte btw
+        q = r.data.decode('UTF-8')
+        print(q)
 
 if __name__ == '__main__':
     unittest.main()
