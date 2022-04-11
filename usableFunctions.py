@@ -1,4 +1,4 @@
-import random.randint from random
+import random
 
 def asA():
     print("AAA")

@@ -14,7 +14,7 @@ class FlaskAppTests(unittest.TestCase):
         # self.assertEqual(r.data, b'Hello World!')
         # b means bytes not string/unicode
         # character is not a byte btw
-        q = r.data.decode('UTF-8')
+        q = r.data.decode('UTF-8') #decode to string
         print(q)
 
 if __name__ == '__main__':
