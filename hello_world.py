@@ -6,7 +6,7 @@ def helloWorld():
     print("Hello World.")
     usableFunctions.asA()
     xx = usableFunctions.randomNumber(0, 50)
-    print("Random number is: " + xx)
+    print("Random number is: " + str(xx))
 
 if __name__ == "__main__":
     helloWorld()
