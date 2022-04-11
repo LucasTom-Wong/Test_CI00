@@ -17,5 +17,10 @@ class FlaskAppTests(unittest.TestCase):
         q = r.data.decode('UTF-8') #decode to string
         print(q)
 
+    def test_new(self):
+        r = self.app.get('soo')
+        q = r.data.decode('UTF-8')
+        print(q)
+
 if __name__ == '__main__':
     unittest.main()
