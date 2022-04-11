@@ -1,0 +1,35 @@
+name: Test All
+on: [push]
+
+jobs:
+    deploy:
+       runs-on: ubuntu-latest
+       strategy:
+         fail-fast: false
+         matrix:
+            python-version: [3.8]
+       steps:
+        - uses: actions/checkout@master
+
+        - name: Initialize Python 3.8
+          uses: actions/setup-python@v1
+          with:
+            python-version: ${{matrix.python-version}}
+
+        - name: Create and start virtual environment
+          run: |
+            python3 -m venv venv
+            source venv/bin/activate
+
+        - name: Install dependencies
+          run: |
+            python3 -m pip install --upgrade pip
+            pip install -r requirements.txt
+
+        - name: Run app
+          run: |
+            python3 test_app.py
+
+        - name: Test hello world
+          run: |
+            python hello_world.py
