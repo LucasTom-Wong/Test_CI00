@@ -1,23 +1,23 @@
-name: Test All
-on: [push]
+name: Test All #name of workflow
+on: [push] #trigger
 
 jobs:
     deploy:
-       runs-on: ubuntu-latest
+       runs-on: ubuntu-latest #configues job to run on latest version of ubuntu, github creates a virtual machine
        strategy:
          fail-fast: false
          matrix:
             python-version: [3.8]
-       steps:
+       steps: #just something you need to do, checks repository against runner allowing you to run script
         - uses: actions/checkout@master
 
         - name: Initialize Python 3.8
-          uses: actions/setup-python@v1
+          uses: actions/setup-python@v1 #sets up python
           with:
             python-version: ${{matrix.python-version}}
 
         - name: Create and start virtual environment
-          run: |
+          run: | #execute command
             python3 -m venv venv
             source venv/bin/activate
 
@@ -33,3 +33,7 @@ jobs:
         - name: Test hello world
           run: |
             python hello_world.py
+
+        - name: Cat
+          run: |
+            cat soonway.txt
