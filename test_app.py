@@ -18,7 +18,7 @@ class FlaskAppTests(unittest.TestCase):
         print(q)
 
     def test_new(self):
-        r = self.app.get('soo')
+        r = self.app.get('/soo')
         q = r.data.decode('UTF-8')
         print(q)
 
