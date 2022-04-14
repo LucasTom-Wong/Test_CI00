@@ -1,4 +1,4 @@
-name: CI
+name: detect Merge
 
 # Controls when the workflow will run
 on:
